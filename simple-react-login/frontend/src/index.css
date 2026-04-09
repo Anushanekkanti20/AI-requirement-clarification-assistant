@@ -1,0 +1,220 @@
+:root {
+  --bg: #0F172A; /* Tailwind slate-900 */
+  --bg-panel: #1E293B; /* Tailwind slate-800 */
+  --border: #334155;
+  --text: #F8FAFC;
+  --text-muted: #94A3B8;
+  --primary: #8B5CF6; /* Vibrant Purple */
+  --primary-hover: #7C3AED;
+  --error: #EF4444;
+  --success: #10B981;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 24px;
+}
+
+.auth-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+h2.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+p.subtitle {
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+.input-group input, .input-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 16px;
+  color: var(--text);
+  box-sizing: border-box;
+  transition: all 0.2s;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.btn-outline:hover {
+  background: var(--border);
+}
+
+.switch-mode {
+  text-align: center;
+  margin-top: 24px;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.switch-btn:hover {
+  text-decoration: underline;
+}
+
+/* Dashboard Specific Styles */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-panel);
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+
+.analysis-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.result-card {
+  background: var(--bg-panel);
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.3);
+}
+
+.result-card h3 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.markdown-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: white;
+}
+.markdown-body p {
+  margin-bottom: 1em;
+}
+.markdown-body ul {
+  padding-left: 20px;
+  margin-bottom: 1em;
+}
+.markdown-body li {
+  margin-bottom: 0.5em;
+}
+.markdown-body strong {
+  color: var(--primary);
+}
+
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .5; }
+}

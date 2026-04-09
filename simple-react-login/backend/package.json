@@ -1,0 +1,17 @@
+{
+  "name": "simple-backend",
+  "version": "1.0.0",
+  "description": "Simple node backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.102.1",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.1",
+    "express": "^4.18.2",
+    "groq-sdk": "^1.1.2"
+  }
+}
