@@ -29,7 +29,7 @@ export default function Login({ onLogin, onSwitchToRegister }) {
         setError(data.error || 'Login failed')
       }
     } catch (err) {
-      setError('Cannot connect to server. Is the backend running?')
+      setError('Cannot connect to server')
     } finally {
       setIsLoading(false)
     }
@@ -37,6 +37,7 @@ export default function Login({ onLogin, onSwitchToRegister }) {
 
   return (
     <div className="auth-card">
+
       <div className="auth-header">
         <div className="icon-wrapper">
           <Lock size={32} />
@@ -52,7 +53,13 @@ export default function Login({ onLogin, onSwitchToRegister }) {
         </div>
       )}
 
-      <form onSubmit={handleSubmit}>
+      {/* 🔥 IMPORTANT CHANGE HERE */}
+      <form onSubmit={handleSubmit} autoComplete="off">
+
+        {/* Hidden fields to disable autofill */}
+        <input type="text" style={{ display: "none" }} />
+        <input type="password" style={{ display: "none" }} />
+
         <div className="form-group">
           <label>Email Address</label>
           <div className="input-wrapper">
@@ -63,6 +70,7 @@ export default function Login({ onLogin, onSwitchToRegister }) {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="new-email"   /* 🔥 FIX */
               required
             />
           </div>
@@ -78,6 +86,7 @@ export default function Login({ onLogin, onSwitchToRegister }) {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              autoComplete="new-password"  /* 🔥 FIX */
               required
             />
           </div>
@@ -94,6 +103,7 @@ export default function Login({ onLogin, onSwitchToRegister }) {
           Sign up
         </button>
       </div>
+
     </div>
   )
 }
